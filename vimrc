@@ -45,6 +45,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'NLKNguyen/papercolor-theme'
 
+Plugin 'slim-template/vim-slim'
+
 
 filetype plugin indent on
 

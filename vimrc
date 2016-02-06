@@ -19,7 +19,9 @@ Plugin 'gmarik/vundle'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
 Plugin 'danro/rename.vim'
 Plugin 'ekalinin/Dockerfile.vim'
@@ -110,9 +112,38 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " vim-airline
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#syntastic#enabled = 1
+ set laststatus=2
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#syntastic#enabled = 1
+
+let g:airline_theme             = 'powerlineish'
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+let g:airline_powerline_fonts   = 1
+
+" vim-powerline symbols
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+ let g:airline_left_sep          = '▶'
+ let g:airline_left_alt_sep      = '▶'
+ let g:airline_right_sep         = '◀'
+ let g:airline_right_alt_sep     = '◀'
+ let g:airline_branch_prefix     = '-'
+ let g:airline_readonly_symbol   = '-'
+ let g:airline_linecolumn_prefix = '-'
+
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
 
 " ┌───────────────────────────────────┐
 " │             Settings              │
@@ -263,8 +294,12 @@ endif
   " let g:solarized_termcolors=256
   " colorscheme solarized
   " colorscheme materialtheme
-  colorscheme PaperColor
+  " colorscheme PaperColor
+  " colorscheme tayra
 
+  colorscheme hybrid_reverse
+  " colorscheme hybrid_material
+  " colorscheme base16_material_dark
 
  else
   let g:CSApprox_loaded = 0
